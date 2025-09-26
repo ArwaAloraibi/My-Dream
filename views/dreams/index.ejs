@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Dreams</title>
+  </head>
+  <body>
+    <%- include('../partials/_navbar.ejs', { user: currentUser  }) %>
+
+    <h1>Welcome to my dreams</h1>
+
+    <a href="/users/<%= user._id %>/dreams/new">Add a Dream</a>
+
+    <!-- to display items -->
+    <ul>
+      <% dreams.forEach((dream) => { %>
+        <li><%= dream.dream %></li>
+      <% }) %>
+    </ul>
+
+  </body>
+</html>

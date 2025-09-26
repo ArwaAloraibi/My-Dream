@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User's index page</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+<ul>
+  <% users.forEach(user => { %>
+    <% if (user._id.toString() !== currentUser._id.toString()) { %>
+      <li><%= user.username %>
+    <a href="/users/<%= user._id %>">View <%= user.username %>'s Dream</a>
+</li>
+    <% } %>
+  <% }) %>
+</ul>
+</body>
+</html>

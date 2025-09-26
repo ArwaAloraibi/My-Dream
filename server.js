@@ -8,15 +8,16 @@ const express = require('express');
 
 const app = express();
 
+const isSignedIn = require('./middleware/is-signed-in.js');
+const passUserToView = require('./middleware/pass-user-to-view.js');
 const methodOverride = require('method-override');
 const morgan = require('morgan');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
-const isSignedIn = require('./middleware/is-signed-in.js');
-const passUserToView = require('./middleware/pass-user-to-view.js');
 
 // Controllers
 const authController = require('./controllers/auth.js');
+const dreamsController = require('./controllers/dreams.js'); //Import the foods controller
 
 // Set the port from environment variable or default to 3000
 const PORT = process.env.PORT ? process.env.PORT : '3000';
@@ -51,6 +52,8 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authController);
+app.use(isSignedIn);
+app.use('/users/:userId/dreams', dreamsController);
 
 // PROTECTED
 
