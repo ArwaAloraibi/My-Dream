@@ -8,6 +8,8 @@ const express = require('express');
 
 const app = express();
 
+const path = require('path');
+
 const isSignedIn = require('./middleware/is-signed-in.js');
 const passUserToView = require('./middleware/pass-user-to-view.js');
 const methodOverride = require('method-override');
@@ -17,7 +19,8 @@ const MongoStore = require('connect-mongo');
 
 // Controllers
 const authController = require('./controllers/auth.js');
-const dreamsController = require('./controllers/dreams.js'); //Import the foods controller
+const dreamsController = require('./controllers/dreams.js'); 
+const usersController = require('./controllers/users.js'); 
 
 // Set the port from environment variable or default to 3000
 const PORT = process.env.PORT ? process.env.PORT : '3000';
@@ -30,6 +33,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride('_method'));
 // Morgan for logging HTTP requests
 app.use(morgan('dev'));
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Session Storage with MongoStore
 app.use(
@@ -54,7 +59,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authController);
 app.use(isSignedIn);
 app.use('/users/:userId/dreams', dreamsController);
-
+app.use('users/:userId/users', usersController);
 // PROTECTED
 
 app.listen(PORT, () => {

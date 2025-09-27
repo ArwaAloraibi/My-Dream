@@ -3,6 +3,8 @@ const router = express.Router();
 
 const User = require('../models/user.js');
 
+
+// home page router
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -16,6 +18,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// to add new dream router
 router.get('/new', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -27,13 +30,12 @@ router.get('/new', async (req, res) => {
 });
 
 
-// with this route, dreams will be added to the database though it wont be shown to the user
+// with this route, dreams will be added to the database 
 router.post('/', async (req, res)=>{
 
      try {
     // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-
     currentUser.dream.push(req.body);
     // Save changes to the user
     await currentUser.save();
@@ -48,6 +50,62 @@ router.post('/', async (req, res)=>{
 
 });
 
+
+// to delete a dream
+router.delete('/:dreamId', async (req,res)=>{
+try{
+const currentUser = await User.findById(req.session.user._id);
+currentUser.dream.id(req.params.dreamId).deleteOne();
+await currentUser.save();
+res.redirect(`/users/${currentUser._id}/dreams`);
+
+}catch(error) {
+    console.log(error);
+    res.redirect('/');
+}
+});
+
+// Edit route
+router.get('/:dreamId/edit', async (req, res) => {
+try{
+const currentUser = await User.findById(req.session.user._id);
+const dream = currentUser.dream.id(req.params.dreamId);
+res.render('dreams/edit.ejs',{
+    dream: dream,
+});
+}catch(error) {
+    console.log(error);
+    res.redirect('/');
+}
+});
+
+
+// show the update on the page
+router.put('/:dreamId', async (req, res) => {
+try{
+const currentUser = await User.findById(req.session.user._id);
+const dream = currentUser.dream.id(req.params.dreamId);
+dream.set(req.body);
+await currentUser.save();
+res.redirect(`/users/${currentUser._id}/dreams`);
+}catch(error){
+console.log(error);
+res.redirect('/');
+}
+});
+
+// show dream's details
+router.get('/:dreamId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const dream = currentUser.dream.id(req.params.dreamId);
+    res.render('dreams/show.ejs', { dream, currentUser });
+  } 
+  catch (err) {
+    console.log(err);
+    res.redirect(`/dreams/${req.params.userId}/dreams`);
+  }
+});
 
 
 module.exports = router;

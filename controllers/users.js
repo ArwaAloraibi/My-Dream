@@ -17,18 +17,18 @@ res.render('users/index.ejs', {
 }
 });
 
+// to show specific dream's details
 router.get('/:id', async (req, res) => {
-try {
+  try {
     const currentUser = await User.findById(req.session.user._id);
-    const user = await User.findById(req.params.id);
-    res.render('users/show.ejs',{
-        user,
-        currentUser,
-    });
-} catch(error){
-    console.log(error);
-    res.redirect('/');
-}
+    const user = currentUser.dream.id(req.params.dreamId);
+    res.render('users/show.ejs', { user, currentUser });
+  } 
+  catch (err) {
+    console.log(err);
+    res.redirect(`/users/${req.params.userId}/users`);
+  }
 });
+
 
 module.exports = router;
