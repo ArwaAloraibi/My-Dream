@@ -21,6 +21,12 @@
   <%= dream.dream %>
 </a>
 
+ <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%=dream.dream%></button>
+       </form>
+
+
+
        <a href="/users/<%= user._id %>/dreams/<%= dream._id %>/edit">Edit dream </a>
 
     </li>
