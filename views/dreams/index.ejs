@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>My Dreams</title>
   </head>
   <body>
@@ -13,11 +14,22 @@
     <a href="/users/<%= user._id %>/dreams/new">Add a Dream</a>
 
     <!-- to display items -->
-    <ul>
-      <% dreams.forEach((dream) => { %>
-        <li><%= dream.dream %></li>
-      <% }) %>
-    </ul>
+  <ul>
+  <% dreams.forEach((dream) => { %>
+    <li>
+<a href="/users/<%= user._id %>/dreams/<%= dream._id %>">
+  <%= dream.dream %>
+</a>
+       <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%=dream.dream%></button>
+       </form>
+
+       <a href="/users/<%= user._id %>/dreams/<%= dream._id %>/edit">Edit dream </a>
+
+    </li>
+  <% }) %>
+</ul>
+
 
   </body>
 </html>

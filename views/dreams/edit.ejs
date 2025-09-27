@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>Edit <%=dream.dream%></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit <%=dream.dream%></h1>
+    <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=PUT" method="POST">
+        <label for="dream">Dream:</label>
+  <input type="text" name="dream" id="dream" required />
+
+  <label for="description">Description:</label>
+  <input type="text" name="description" id="description"/>
+
+  <label for="category">Category:</label>
+  <select id="category" name="category" required>
+    <option value="Academic_Star">Academic Star</option>
+    <option value="Job_Star">Job Star</option>
+    <option value="Language_Star">Language Star</option>
+    <option value="Matrialistic_Star">Matrialistic Star</option>
+    <option value="Skills_Star">Skills Star</option>
+  </select>
+
+  <label for="status">Status:</label>
+  <select id="status" name="status" required>
+    <option value="Working_On">Working On</option>
+    <option value="Done">Done</option>
+  </select>
+
+            <button type="submit">update dream</button>
+    </form>
+</body>
+</html>
