@@ -44,20 +44,19 @@ h1 {
 }
 
 .dream-box {
-  position: relative;
-  display: flex;
-  padding: 15px 10px;
-  flex-direction: column;
-  text-transform: uppercase;
-  width: 200px;
-  color: #03e9f4;
+  background: #03e9f4;
+  color: #050801;
+  font-size: 18px;
   font-weight: bold;
-  font-size: 15px;
-  align-items: center;   
-  margin-top: 24px;
-  text-decoration: none; 
-  transform: 0.5s;
-  overflow: hidden;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 70px #03e9f4;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  min-width: 150px;
 }
 
 .btn:hover{
@@ -72,17 +71,54 @@ h1 {
 
 }
 
+.dream-grid {
+  display: flex;            /* arrange in row */
+  flex-wrap: wrap;          /* wrap to next line if too many */
+  gap: 20px;                /* spacing between boxes */
+  justify-content: center;  /* center them nicely */
+  margin-top: 40px;
+}
+
 .dream-box{
-    background: #03e9f4;
+  background: #03e9f4;
   color: #050801;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 25px;
+  border-radius: 8px;
+  text-align: center;
   box-shadow: 0 0 5px #03e9f4,
               0 0 25px #03e9f4,
-              0 0 50px#03e9f4,
+              0 0 50px #03e9f4,
               0 0 70px #03e9f4;
-  -webkit-box-reflect: below 1px linear-graident
-  (transparent, #0005);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
 
 }
+
+.dream-box a {
+  color: inherit;          
+  text-decoration: none;
+}
+
+.dreams-grid .dream-box:nth-child(1) {
+  filter: hue-rotate(45deg);
+}
+.dreams-grid .dream-box:nth-child(2) {
+  filter: hue-rotate(90deg);
+}
+.dreams-grid .dream-box:nth-child(3) {
+  filter: hue-rotate(135deg);
+}
+.dreams-grid .dream-box:nth-child(4) {
+  filter: hue-rotate(175deg);
+}
+.dreams-grid .dream-box:nth-child(5) {
+  filter: hue-rotate(225deg);
+}
+.dreams-grid .dream-box:nth-child(6) {
+  filter: hue-rotate(275deg);
+}
+
 
 .btn-dream{
   margin-bottom: 300px;
@@ -96,6 +132,164 @@ h1 {
   flex-direction: column;
   align-items: center;
 }
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 300px;
+  margin: 0 auto;
+}
+ 
+.login-container label {
+  margin: 10px 0 5px;
+  align-self: flex-start;
+  font-size: 18px;
+  color: #03e9f4; 
+}
+
+.login-container input {
+  padding: 12px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.login-container input:focus {
+  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+}
+
+#btn-submit {
+  all: unset;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 15px 10px;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 100%;
+  color: #03e9f4;
+  font-weight: bold;
+  font-size: 22px;
+  align-items: center;   
+  margin-top: 24px;
+  text-decoration: none; 
+  box-shadow: 0 0 5px #03e9f4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn-submit:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 70px #03e9f4;
+}
+
+
+.dream-box:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 70px #03e9f4;
+}
+
+.navbar {
+  width: 100%;                  
+  display: flex;                
+  justify-content: center;     
+  align-items: center;        
+  padding: 15px 0;             
+  background: #050801;      
+  position: fixed;  /* stays at top */
+  top: 0;
+  left: 0;
+  z-index: 1000;           
+}
+
+
+.nav-links, .login-link, .signup-link {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  color: #03e9f4;
+  text-decoration: none;
+  padding: 6px 10px;           
+  margin: 0 10px;              
+  transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*logo arcs */
 .logo-loader {
@@ -177,102 +371,3 @@ h1 {
   0%   { transform: rotate(0deg) translateX(60px) rotate(0deg); }
   100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
 }
-
-.login-container form {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-  width: 300px;
-  margin: 0 auto;
-}
- 
-.login-container label {
-  margin: 10px 0 5px;
-  align-self: flex-start;
-  font-size: 18px;
-  color: #03e9f4; 
-}
-
-.login-container input {
-  padding: 12px 10px;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  font-size: 16px;
-  margin-bottom: 20px;
-  outline: none;
-}
-
-.login-container input:focus {
-  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
-}
-
-#btn-submit {
-  all: unset;
-  width: 100%;
-  position: relative;
-  display: flex;
-  padding: 15px 10px;
-  justify-content: center;
-  text-transform: uppercase;
-  width: 100%;
-  color: #03e9f4;
-  font-weight: bold;
-  font-size: 22px;
-  align-items: center;   
-  margin-top: 24px;
-  text-decoration: none; 
-  box-shadow: 0 0 5px #03e9f4;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-#btn-submit:hover {
-  background: #03e9f4;
-  color: #050801;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 70px #03e9f4;
-}
-
-.navbar {
-  width: 100%;                  
-  display: flex;                
-  justify-content: center;     
-  align-items: center;        
-  padding: 15px 0;             
-  background: #050801;      
-  position: fixed;  /* stays at top */
-  top: 0;
-  left: 0;
-  z-index: 1000;                /* on top of other content */
-}
-
-
-.nav-links, .login-link, .signup-link {
-  text-transform: uppercase;
-  font-weight: bold;
-  font-size: 15px;
-  color: #03e9f4;
-  text-decoration: none;
-  padding: 6px 10px;           
-  margin: 0 10px;              
-  transition: all 0.3s ease;
-}
-
-
-
-
-.dream-box:hover {
-  background: #03e9f4;
-  color: #050801;
-  box-shadow: 0 0 5px #03e9f4,
-              0 0 25px #03e9f4,
-              0 0 50px #03e9f4,
-              0 0 70px #03e9f4;
-}
-
-
-
-
