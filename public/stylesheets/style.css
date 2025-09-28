@@ -100,25 +100,13 @@ h1 {
   text-decoration: none;
 }
 
-.dreams-grid .dream-box:nth-child(1) {
-  filter: hue-rotate(45deg);
-}
-.dreams-grid .dream-box:nth-child(2) {
-  filter: hue-rotate(90deg);
-}
-.dreams-grid .dream-box:nth-child(3) {
-  filter: hue-rotate(135deg);
-}
-.dreams-grid .dream-box:nth-child(4) {
-  filter: hue-rotate(175deg);
-}
-.dreams-grid .dream-box:nth-child(5) {
-  filter: hue-rotate(225deg);
-}
-.dreams-grid .dream-box:nth-child(6) {
-  filter: hue-rotate(275deg);
-}
 
+.dream-grid .dream-box:nth-child(6n+1) { filter: hue-rotate(45deg); }
+.dream-grid .dream-box:nth-child(6n+2) { filter: hue-rotate(90deg); }
+.dream-grid .dream-box:nth-child(6n+3) { filter: hue-rotate(135deg); }
+.dream-grid .dream-box:nth-child(6n+4) { filter: hue-rotate(175deg); }
+.dream-grid .dream-box:nth-child(6n+5) { filter: hue-rotate(225deg); }
+.dream-grid .dream-box:nth-child(6n+6) { filter: hue-rotate(275deg); }
 
 .btn-dream{
   margin-bottom: 300px;
