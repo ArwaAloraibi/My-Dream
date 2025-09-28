@@ -37,6 +37,10 @@ h1 {
   margin: 0;
 }
 
+#Welcome-line{
+  margin-bottom: 400px;
+}
+
 .btn {
   position: relative;
   display: flex;
@@ -212,3 +216,29 @@ h1 {
               0 0 50px #03e9f4,
               0 0 70px #03e9f4;
 }
+
+.navbar {
+  width: 100%;                  
+  display: flex;                
+  justify-content: center;     
+  align-items: center;        
+  padding: 15px 0;             
+  background: #050801;      
+  position: fixed;  /* stays at top */
+  top: 0;
+  left: 0;
+  z-index: 1000;                /* on top of other content */
+}
+
+
+.nav-links, .login-link, .signup-link {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 15px;
+  color: #03e9f4;
+  text-decoration: none;
+  padding: 6px 10px;           
+  margin: 0 10px;              
+  transition: all 0.3s ease;
+}
+
