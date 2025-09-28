@@ -1,22 +1,5 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-/* 
-:root {
-  --border-color: rgb(213, 11, 139);
-  --text-color: rgb(251, 243, 193);
-  --text-color-mint: rgb(100, 226, 183);
-  --tile-color-dark02: rgba(180, 100, 190, 0.2);
-  --tile-color-dark03: rgba(180, 100, 190, 0.3);
-  --tile-color-dark06: rgba(180, 100, 190, 0.6);  
-  --tile-color-light: rgb(240, 170, 240);
-  --mint-glow: 0 0 6px rgb(100, 226, 183);
-  --bg-dark: rgb(20, 20, 30);
-  --bg-gradient: linear-gradient(180deg, rgb(29, 22, 59), rgb(12, 12, 34));
-  --highlight: rgb(255, 80, 180);
-  --accent-cyan: rgb(0, 220, 255);
-  --accent-yellow: rgb(255, 255, 100);
-} */
-
 
 body {
   margin: 0;
@@ -38,7 +21,8 @@ h1 {
 }
 
 #Welcome-line{
-  margin-bottom: 400px;
+  margin-bottom: 500px;
+  position: fixed;
 }
 
 .btn {
@@ -76,7 +60,7 @@ h1 {
   overflow: hidden;
 }
 
-.btn, .dream-box:hover{
+.btn:hover{
   background: #03e9f4;
   color: #050801;
   box-shadow: 0 0 5px #03e9f4,
@@ -88,6 +72,24 @@ h1 {
 
 }
 
+.dream-box{
+    background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px#03e9f4,
+              0 0 70px #03e9f4;
+  -webkit-box-reflect: below 1px linear-graident
+  (transparent, #0005);
+
+}
+
+.btn-dream{
+  margin-bottom: 300px;
+  position: fixed;
+  align-items: center;
+
+}
 .index-container {
   text-align: center;
   display: flex;

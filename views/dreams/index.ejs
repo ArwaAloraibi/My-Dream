@@ -14,14 +14,15 @@
 
    
     <a class="btn-dream" href="/users/<%= user._id %>/dreams/new">Add a Dream</a>
- <div class="dream-box">
+ 
+    <div class="dream-grid">
     <!-- to display items -->
       <% dreams.forEach((dream) => { %>
-       
+       <div class="dream-box">
           <a href="/users/<%= user._id %>/dreams/<%= dream._id %>">
             <%= dream.dream %>
           </a>
-          
+          </div>
         </div>
       <% }) %>
   </body>

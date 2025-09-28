@@ -10,14 +10,12 @@
  
 <!-- <h1><%= currentUser.username %> </h1>  -->
 
-<ul>
-    <li>
+<div class="dream's-details">
       <p>Dream: <%= dream.dream %></p>
      <p>Description:<%= dream.description %></p>
       <p>Category:<%= dream.category%></p>
       <p>Status: <%= dream.status%></p>
-    </li>
-</ul>
+</div>
 
 <div class="dream-actions">
             <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
