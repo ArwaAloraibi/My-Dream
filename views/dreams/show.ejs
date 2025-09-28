@@ -19,6 +19,12 @@
     </li>
 </ul>
 
+<div class="dream-actions">
+            <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+            <a href="/users/<%= user._id %>/dreams/<%= dream._id %>/edit">Edit</a>
+          </div>
 
        <a href="/users/<%= user._id %>/dreams">back to drdeams skkn </a>
 </body>

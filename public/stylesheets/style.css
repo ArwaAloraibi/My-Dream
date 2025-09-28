@@ -59,7 +59,24 @@ h1 {
   overflow: hidden;
 }
 
-.btn:hover{
+.dream-box {
+  position: relative;
+  display: flex;
+  padding: 15px 10px;
+  flex-direction: column;
+  text-transform: uppercase;
+  width: 200px;
+  color: #03e9f4;
+  font-weight: bold;
+  font-size: 15px;
+  align-items: center;   
+  margin-top: 24px;
+  text-decoration: none; 
+  transform: 0.5s;
+  overflow: hidden;
+}
+
+.btn, .dream-box:hover{
   background: #03e9f4;
   color: #050801;
   box-shadow: 0 0 5px #03e9f4,
@@ -241,4 +258,19 @@ h1 {
   margin: 0 10px;              
   transition: all 0.3s ease;
 }
+
+
+
+
+.dream-box:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 70px #03e9f4;
+}
+
+
+
 
