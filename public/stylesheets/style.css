@@ -74,7 +74,7 @@ h1 {
   align-items: center;
 }
 
-/* Loader / logo arcs */
+/*logo arcs */
 .logo-loader {
   position: relative;
   width: 140px;
@@ -153,4 +153,59 @@ h1 {
 @keyframes orbit {
   0%   { transform: rotate(0deg) translateX(60px) rotate(0deg); }
   100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
+}
+
+
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.login-container label {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: #03e9f4; /* visible label color */
+}
+
+.login-container input {
+  padding: 12px 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+.login-container input:focus {
+  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+}
+
+/* Button styling same as .btn */
+#btn-submit {
+  all: unset;
+  position: relative;
+  display: flex;
+  padding: 15px 10px;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 100%;
+  color: #03e9f4;
+  font-weight: bold;
+  font-size: 22px;
+  align-items: center;   
+  margin-top: 24px;
+  text-decoration: none; 
+  box-shadow: 0 0 5px #03e9f4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#btn-submit:hover {
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px #03e9f4,
+              0 0 70px #03e9f4;
 }
