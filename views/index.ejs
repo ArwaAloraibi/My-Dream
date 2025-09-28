@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,24 +7,37 @@
   <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Home Page</title>
 </head>
+
 <body class="index-body">
-<%- include('./partials/_navbar.ejs') %>
 
  <div class="index-container">
-    <div class="text-container">
-     <h1 id="index-header">My Dreams</h1>
+
+ <div class="logo-loader">
+    <div class="arc arc1"></div>
+    <div class="arc arc2"></div>
+    <div class="arc arc3"></div>
+
+     <!-- Neon stars -->
+  <div class="star star1"></div>
+  <div class="star star2"></div>
+  <div class="star star3"></div>
+</div>
+    </div>
+
+       <h1>My Dreams</h1>
+    
+          <% if(user) { %>
+      <a class="btn" href="/users/<%=user._id%>/dreams">View my Dreams</a>
+      <a class="btn" href="/auth/sign-out">Sign Out</a>
+
+          <% } else { %>
+      <a class="btn" href="/auth/sign-in">Log in</a>
+      <a class="btn" href="/auth/sign-up">Sign Up</a>
+          <% } %>
+
 </div>
 
-<div class="auth-links">
-      <a class="btn-auth" href="/auth/sign-up">Sign Up</a>
-      <a class="btn-auth" href="/auth/sign-in">Log in</a>
-    </div>
-  </div>
-<!-- <% if (user) { %>
-  
 
-
-<% } %> -->
 </body>
 </html>
 

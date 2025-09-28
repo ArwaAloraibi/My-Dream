@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+/* 
 :root {
   --border-color: rgb(213, 11, 139);
   --text-color: rgb(251, 243, 193);
@@ -14,140 +15,142 @@
   --highlight: rgb(255, 80, 180);
   --accent-cyan: rgb(0, 220, 255);
   --accent-yellow: rgb(255, 255, 100);
-}
+} */
+
 
 body {
-  font-family: "Silkscreen", sans-serif;
   margin: 0;
   height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--bg-gradient);
-  color: var(--text-color);
+  background: #050801;
 }
 
 h1 {
-  font-size: 70px;
-  color: #a0e7ff; /* softer neon */
-  margin: 5px;
-  display: flex;
-
-  justify-content: center;
-}
-
-h2 {
-  font-size: 2rem;
-  color: #c0f0ff;
-  text-shadow: 
-    0 0 3px #c0f0ff,
-    0 0 8px #00bfff;
-  margin-top: 1rem;
-}
-
-.index-body {
-  background-size: cover;
-  min-height: 100vh;
-  width: 100vw;
-  color: white;
-}
-
-.signup-link {
-  color: white;
-  margin: 0 0 20px 0;
-}
-
-
-.navbar {
-  display: flex;
-  flex-direction: row;
-  max-width: 100vw;
-  padding: 5px 20px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#index-header {
   color: rgb(68, 219, 242);;
    text-shadow: 
     0 0 3px #c0f0ff,
     0 0 8px #00bfff;
-  size: 1em !important;
+  font-size: 90px;
   margin: 0;
 }
 
-.auth-links {
+.btn {
+  position: relative;
   display: flex;
-  gap: 20px;
-flex-direction: column;
+  padding: 15px 10px;
+  flex-direction: column;
+  text-transform: uppercase;
+  width: 200px;
+  color: #03e9f4;
+  font-weight: bold;
+  font-size: 30px;
   align-items: center;   
   margin-top: 24px;
-  color: #4b598e;
-  font-weight: bold;
+  text-decoration: none; 
+  box-shadow: 0 0 5px #03e9f4;
+  transform: 0.5s;
+  overflow: hidden;
 }
 
-.btn-auth {
-  display: block;
-  padding: 12px 25px;
-  border-radius: 30px;
-  background-color: #ce4866;
-  color: white;
-  font-size: 18px;
-flex-direction: column;
-  font-weight: bold;
-  transition: 0.3s ease;
-   width: 180px; 
-   text-align: center; 
+.btn:hover{
+  background: #03e9f4;
+  color: #050801;
+  box-shadow: 0 0 5px #03e9f4,
+              0 0 25px #03e9f4,
+              0 0 50px#03e9f4,
+              0 0 70px #03e9f4;
+  -webkit-box-reflect: below 1px linear-graident
+  (transparent, #0005);
 
 }
 
-.btn-auth:hover {
-  background-color: #a83550;
-  transform: translateY(-2px);
-}
-
-.auth-link:hover {
-  color: white;
-}
-
-.login-container,
-.signup-container {
+.index-container {
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+
+/* Loader / logo arcs */
+.logo-loader {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin-bottom: 20px;
+}
+
+.logo-loader .arc {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 3px solid transparent;
+  border-top-color: #00e9f4;
+  border-radius: 50%;
+  animation: rotateArc 1.8s linear infinite;
+  filter: drop-shadow(0 0 8px #00e9f4);
+}
+
+/* color + speed variants */
+.logo-loader .arc1 {
+  border-top-color: #00e9f4;
+  animation-duration: 1.8s;
+  animation-delay: -0.4s;
+}
+
+.logo-loader .arc2 {
+  width: 120px;
+  height: 120px;
+  border-top-color: #ff4df0;
+  animation-duration: 2.4s;
+  animation-delay: -0.8s;
+}
+
+.logo-loader .arc3 {
+  width: 140px;
+  height: 140px;
+  border-top-color: #ffff66;
+  animation-duration: 3s;
+  animation-delay: -1.2s;
+}
+
+@keyframes rotateArc {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Loading text styling */
+.logo-loader .loading-text {
+  position: absolute;
+  top: 110%;
   width: 100%;
-  height: 100%;
-    border-radius: 20px;
-
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  width: 20em;
-  height: 50%;
-  background-color: #f6e7e7;
-  padding: 30px 40px 20px 40px;
-  border-radius: 20px;
-  color: #4b598e;
-  font-weight: bold;
+/* Stars orbiting arcs */
+.logo-loader .star {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 8px #fff, 0 0 12px currentColor;
+  animation: orbit 2s linear infinite;
 }
 
-input {
-  border: 1px solid rgb(182, 182, 182);
-  padding: 8px;
-  border-radius: 10px;
-}
+/* Each star’s orbit radius and speed */
+.star1 { color: #00e9f4; animation-duration: 1.8s; }
+.star2 { color: #ff4df0; animation-duration: 2.4s; }
+.star3 { color: #ffff66; animation-duration: 3s; }
 
-button {
-  padding: 10px;
-  background-color: #ce4866;
-  color: white;
-  border-radius: 30px;
-  border: none;
-  margin: 15px 0;
-  font-size: 1.1em;
+@keyframes orbit {
+  0%   { transform: rotate(0deg) translateX(60px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(60px) rotate(-360deg); }
 }
