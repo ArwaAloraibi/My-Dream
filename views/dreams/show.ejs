@@ -10,11 +10,19 @@
  
 <!-- <h1><%= currentUser.username %> </h1>  -->
 
-<div class="dream's-details">
+<div class="dream-details">
       <p>Dream: <%= dream.dream %></p>
      <p>Description:<%= dream.description %></p>
-      <p>Category:<%= dream.category%></p>
+      <p>Category: 
+        <% if ((dream.category)===("Academic_Star")){ %>
+            <%= "Academic Star" %>
+       <% } %>
+      </p>
+
+
       <p>Status: <%= dream.status%></p>
+
+      
 </div>
 
 <div class="dream-actions">
