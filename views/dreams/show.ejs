@@ -11,18 +11,46 @@
 <!-- <h1><%= currentUser.username %> </h1>  -->
 
 <div class="dream-details">
+
       <p>Dream: <%= dream.dream %></p>
+
      <p>Description:<%= dream.description %></p>
+
       <p>Category: 
         <% if ((dream.category)===("Academic_Star")){ %>
             <%= "Academic Star" %>
        <% } %>
+
+         <% if ((dream.category)===("Job_Star")){ %>
+            <%= "Job Star" %>
+       <% } %>
+
+        <% if ((dream.category)===("Language_star")){ %>
+            <%= "Language star" %>
+       <% } %>
+
+        <% if ((dream.category)===("Matrialistic_Star")){ %>
+            <%= "Matrialistic Star" %>
+       <% } %>
+
+        <% if ((dream.category)===("Skills_Star")){ %>
+            <%= "Skills Star" %>
+       <% } %>
+      </p>
+
+      <p>Status: <%= dream.status%>
+
+        <% if ((dream.status)===("Working_On")){ %>
+            <%= "Working On" %>
+       <% } %>
+
+        <% if ((dream.status)===("Done")){ %>
+            <%= "Done" %>
+       <% } %>
+
       </p>
 
 
-      <p>Status: <%= dream.status%></p>
-
-      
 </div>
 
 <div class="dream-actions">
