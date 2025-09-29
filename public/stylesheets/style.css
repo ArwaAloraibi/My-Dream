@@ -72,10 +72,10 @@ h1 {
 }
 
 .dream-grid {
-  display: flex;            /* arrange in row */
-  flex-wrap: wrap;          /* wrap to next line if too many */
-  gap: 20px;                /* spacing between boxes */
-  justify-content: center;  /* center them nicely */
+  display: flex;           
+  flex-wrap: wrap;          
+  gap: 20px;                
+  justify-content: center;  
   margin-top: 40px;
 }
 
@@ -100,7 +100,6 @@ h1 {
   text-decoration: none;
 }
 
-
 .dream-grid .dream-box:nth-child(6n+1) { filter: hue-rotate(45deg); }
 .dream-grid .dream-box:nth-child(6n+2) { filter: hue-rotate(90deg); }
 .dream-grid .dream-box:nth-child(6n+3) { filter: hue-rotate(135deg); }
@@ -108,12 +107,13 @@ h1 {
 .dream-grid .dream-box:nth-child(6n+5) { filter: hue-rotate(225deg); }
 .dream-grid .dream-box:nth-child(6n+6) { filter: hue-rotate(275deg); }
 
-.btn-dream{
+/* thisa one is for the index page not the actuall ad dream form */
+.add-a-dream{
   margin-bottom: 300px;
   position: fixed;
   align-items: center;
-
 }
+
 .index-container {
   text-align: center;
   display: flex;
@@ -145,7 +145,7 @@ h1 {
   margin-bottom: 20px;
   outline: none;
 }
-
+ 
 .login-container input:focus {
   box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
 }
@@ -178,6 +178,68 @@ h1 {
               0 0 50px #03e9f4,
               0 0 70px #03e9f4;
 }
+
+
+
+/* Start */
+.new-dream-container form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  width: 300px;
+  margin: 0 auto;
+}
+ 
+.new-dream-container label {
+  margin: 10px 0 5px;
+  align-self: flex-start;
+  font-size: 18px;
+  color: #03e9f4; 
+}
+
+.new-dream-container input {
+  padding: 12px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  margin-bottom: 20px;
+  outline: none;
+}
+ 
+.new-dream-container input:focus {
+  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+}
+
+#add-dream-btn{
+  all: unset;
+  width: 100%;
+  position: relative;
+  display: flex;
+  padding: 15px 10px;
+  justify-content: center;
+  text-transform: uppercase;
+  width: 100%;
+  color: #03e9f4;
+  font-weight: bold;
+  font-size: 22px;
+  align-items: center;   
+  margin-top: 24px;
+  text-decoration: none; 
+  box-shadow: 0 0 5px #03e9f4;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#add-dream-btn:hover {
+  background: #ff4df0;
+  color: #050801;
+  box-shadow: 0 0 5px #ff4df0,
+              0 0 25px #ff4df0,
+              0 0 50px #ff4df0,
+              0 0 70px #ff4df0;
+}
+/* End */
 
 
 .dream-box:hover {
