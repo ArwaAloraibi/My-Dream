@@ -59,8 +59,10 @@ app.get('/', (req, res) => {
 
 app.use('/auth', authController);
 app.use(isSignedIn);
+app.use('/users/:userId/categories', categoryController);
 app.use('/users/:userId/dreams', dreamsController);
 app.use('users/:userId/users', usersController);
+
 // PROTECTED
 
 app.listen(PORT, () => {
