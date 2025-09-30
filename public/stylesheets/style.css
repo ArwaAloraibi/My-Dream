@@ -8,11 +8,11 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #050801;
+  background: #F2D9EE;
 }
 
 h1 {
-  color: rgb(68, 219, 242);;
+  color: rgb(68, 219, 242);
    text-shadow: 
     0 0 3px #c0f0ff,
     0 0 8px #00bfff;
@@ -180,7 +180,7 @@ h1 {
 }
 
 .dream-details{
-  color:antiquewhite
+  color:rgb(93, 87, 79)
 
 }
 
@@ -260,7 +260,7 @@ h1 {
   justify-content: center;     
   align-items: center;        
   padding: 15px 0;             
-  background: #050801;      
+  background:  rgba(58,44,57,0.9);      
   position: fixed;  /* stays at top */
   top: 0;
   left: 0;

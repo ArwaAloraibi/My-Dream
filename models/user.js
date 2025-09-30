@@ -24,6 +24,17 @@ const dreamSchema = new mongoose.Schema({
 
 });
 
+
+const categorySchema = new mongoose.Schema({
+
+  name: {
+    type: String,
+    required: true
+  }
+
+});
+
+
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
