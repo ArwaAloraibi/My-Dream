@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>My Categories</title>
+  </head>
+
+  <body class="dreams-container">
+    <%- include('../partials/_navbar.ejs', { user: currentUser  }) %>
+
+    <h1 id="Welcome-line">Welcome to my Categories</h1>
+
+   
+    <a class="add-a-dream" href="/users/<%= user._id %>/dreams/new">Add a Category</a>
+ 
+    <div class="dream-grid">
+    <!-- to display items -->
+      <% categories.forEach((category) => { %>
+       <div class="dream-box">
+          <a href="/users/<%= user._id %>/dreams/<%= dream._id %>">
+            <%= category.name %>
+          </a>
+          
+        </div>
+      <% }) %>
+  </body>
+</html>

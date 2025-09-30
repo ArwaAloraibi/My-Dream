@@ -21,6 +21,7 @@ const MongoStore = require('connect-mongo');
 const authController = require('./controllers/auth.js');
 const dreamsController = require('./controllers/dreams.js'); 
 const usersController = require('./controllers/users.js'); 
+const categoryController = require('./controllers/categories.js');
 
 // Set the port from environment variable or default to 3000
 const PORT = process.env.PORT ? process.env.PORT : '3000';
