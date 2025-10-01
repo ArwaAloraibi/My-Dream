@@ -116,13 +116,14 @@ router.get('/:id', async (req, res) => {
 router.get('/:id/dreams', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
+    const dreams = await User.findById(req.params.dreams);
     const category = currentUser.category.id(req.params.id);
     if (!category) {
       return res.redirect(`/users/${currentUser._id}/categories`);
     }
-    const dreams = currentUser.dream.filter(
-      (dream) => dream.categoryId.toString() === req.params.id
-    );
+    // const dreams = currentUser.dream.filter(
+    //   (dream) => dream.categoryId.toString() === req.params.id
+    // );
     res.render('dreams/index.ejs', { dreams, categoryId: req.params.id, currentUser });
   } catch (err) {
     console.log(err);

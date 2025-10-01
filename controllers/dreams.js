@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
 router.get('/new', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    res.render('dreams/new.ejs', { currentUser });
+    res.render(`/categories/${req.body.categoryId}/dreams/new.ejs`, { currentUser });
   } catch (error) {
     console.log(error);
     res.redirect('/');
