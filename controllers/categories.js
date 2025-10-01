@@ -20,7 +20,6 @@ router.get('/', async (req, res) => {
 });
 
 
-// to add new dream router
 router.get('/new', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);

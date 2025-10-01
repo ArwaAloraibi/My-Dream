@@ -19,7 +19,7 @@
     <!-- to display items -->
       <% categories.forEach((category) => { %>
        <div class="dream-box">
-          <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>">
+          <a href="/users/<%= user._id %>/categories/<%= category._id %>">
             <%= category.name %>
           </a>
           

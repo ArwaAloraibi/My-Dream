@@ -1,17 +1,8 @@
-// const {dream} = require('express');
+const {dream} = require('express');
 const {category} = require('express');
 const mongoose = require('mongoose');
 
-const categorySchema = new mongoose.Schema({
 
-  name: {
-    type: String,
-    required: true
-  },
-
-  
-
-});
 
 const dreamSchema = new mongoose.Schema({
 
@@ -29,19 +20,25 @@ const dreamSchema = new mongoose.Schema({
     enum: ['Working_On', 'Done'],
   },
 
-   categoryId: {
-    type: mongoose.Schema.Types.ObjectId, 
-    required: true,
-  },
+  //  categoryId: {
+  //   type: mongoose.Schema.Types.ObjectId, 
+  //   required: true,
+  // },
 
-  userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-  }
 
 });
 
+const categorySchema = new mongoose.Schema({
+
+  name: {
+    type: String,
+    required: true
+
+  },
+  
+    dream: [dreamSchema],
+
+});
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -54,11 +51,8 @@ const userSchema = new mongoose.Schema({
   },
 
   category: [categorySchema],
-
-  dream: [dreamSchema],
 });
 
 const User = mongoose.model('User', userSchema);
-
 
 module.exports = User;
