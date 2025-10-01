@@ -72,7 +72,8 @@ try{
 const currentUser = await User.findById(req.session.user._id);
 const category = currentUser.category.id(req.params.categoryId);
 res.render('categories/edit.ejs',{
-    currentUser: category,
+    currentUser, 
+    category,
 });
 }catch(error) {
     console.log(error);
@@ -86,7 +87,7 @@ router.put('/:categoryId', async (req, res) => {
 try{
 const currentUser = await User.findById(req.session.user._id);
 const category = currentUser.category.id(req.params.categoryId);
-dream.set(req.body);
+category.set(req.body);
 await currentUser.save();
 res.redirect(`/users/${currentUser._id}/categories`);
 }catch(error){
@@ -96,17 +97,19 @@ res.redirect('/');
 });
 
 // show dream's details
-router.get('/:categoryd', async (req, res) => {
+router.get('/:categoryId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const category = currentUser.category.id(req.params.categoryId);
-    res.render('categories/show.ejs', { currentUser, category,   dreams: currentUser.dream.filter(d => d.categoryId == category._id) // optional if you link dreams to categories
+
+    res.render('categories/show.ejs', { 
+      currentUser, 
+      category,
+      dreams: currentUser.dream.filter(d => d.categoryId?.toString() === category._id.toString())
     });
-    
-  } 
-  catch (err) {
+  } catch (err) {
     console.log(err);
-    res.redirect(`/categories/${req.params.userId}/dreams`);
+    res.redirect(`/users/${currentUser._id}/categories`);
   }
 });
 

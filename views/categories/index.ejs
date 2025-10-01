@@ -13,13 +13,13 @@
     <h1 id="Welcome-line">Welcome to my Categories</h1>
 
    
-    <a class="add-a-dream" href="/users/<%= user._id %>/categories/new">Add a Category</a>
+    <a class="add-a-dream" href="/users/<%= currentUser._id %>/categories/new">Add a Category</a>
  
     <div class="dream-grid">
     <!-- to display items -->
       <% categories.forEach((category) => { %>
        <div class="dream-box">
-          <a href="/users/<%= user._id %>/categories/<%= category._id %>">
+          <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>">
             <%= category.name %>
           </a>
           

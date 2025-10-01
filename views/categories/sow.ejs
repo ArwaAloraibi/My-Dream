@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+<title><%= currentUser.category %></title>
+</head>
+<body>
+ 
+
+<div class="dream-details">
+
+      <p>category: <%= category.name %></p>
+
+      <div class="dream-grid">
+    <!-- to display items -->
+      <% categories.forEach((category) => { %>
+       <div class="dream-box">
+          <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>">
+            <%= category.name %>
+          </a>
+          
+        </div>
+
+
+</div>
+
+<div class="dream-actions">
+            <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+              <button id="btn-submit" type="submit">Delete</button>
+            </form>
+            <a id="btn-submit" href="/users/<%= user._id %>/dreams/<%= dream._id %>/edit">Edit</a>
+          </div>
+
+       <a id="btn-submit" href="/users/<%= user._id %>/dreams">back to dreams </a>
+</body>
+</html>
