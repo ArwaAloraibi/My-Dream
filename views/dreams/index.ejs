@@ -9,17 +9,15 @@
 
   <body class="dreams-container">
     <%- include('../partials/_navbar.ejs', { user: currentUser  }) %>
-
-    <h1 id="Welcome-line">Welcome to my dreams</h1>
-
    
-    <a class="add-a-dream" href="/users/<%= user._id %>/dreams/new">Add a Dream</a>
+    <!-- why this is linked to the update the category name function?? -->
+    <a class="add-a-dream" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/new">Add a Dream</a>
  
     <div class="dream-grid">
-    <!-- to display items -->
+    <!-- to display dreams -->
       <% dreams.forEach((dream) => { %>
        <div class="dream-box">
-          <a href="/users/<%= currentUser._id %>/categories/<%= categoryId %>/dreams/<%= dream._id %>">
+          <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>">
             <%= dream.dream %>
           </a>
           

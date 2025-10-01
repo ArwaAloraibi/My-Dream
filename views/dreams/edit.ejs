@@ -11,7 +11,7 @@
 
     <%- include('../partials/_navbar.ejs') %>
     <h1>Edit <%=dream.dream%></h1>
-    <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=PUT" method="POST">
+    <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>?_method=PUT" method="POST">
         <label for="dream">Dream:</label>
   <input type="text" name="dream" id="dream" value="<%= dream.dream %>" required />
 

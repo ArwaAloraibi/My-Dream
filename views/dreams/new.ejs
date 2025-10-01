@@ -13,7 +13,7 @@
     <h1>Add New Dream</h1>
 
 
-<form action="/users/<%= currentUser._id %>/dreams" method="POST">
+<form action="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams" method="POST">
   
   <label for="dream">Dream:</label>
   <input type="text" name="dream" id="dream" required />
@@ -24,7 +24,7 @@
 <label for="categoryId">Category:</label>
 <select id="categoryId" name="categoryId" required>
   <% currentUser.category.forEach((cat) => { %>
-    <option value="<%= cat._id %>"><%= cat.name %></option>
+    <option value="<%= cat._id %>"><%= category.name %></option>
   <% }) %>
 </select>
 

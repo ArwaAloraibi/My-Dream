@@ -4,11 +4,11 @@ const router = express.Router();
 const User = require('../models/user.js');
 
 
-// home page router
+// home page router for dreams in the category
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    res.render('dreams/index.ejs', {
+    res.render(`/categories/${req.body.categoryId}`, {
       currentUser: currentUser,         
       dreams: currentUser.dream,  
     });

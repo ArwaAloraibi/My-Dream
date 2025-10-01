@@ -11,7 +11,7 @@
 
     <%- include('../partials/_navbar.ejs') %>
     <h1>Edit <%=category.name%></h1>
-    <form action="/users/<%= currentUser._id %>/categories?_method=PUT" method="POST">
+    <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>?_method=PUT" method="POST">
 
    <label for="name">category:</label>
   <input type="text" name="name" id="name" value="<%= category.name %>" required  />

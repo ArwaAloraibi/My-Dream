@@ -54,12 +54,12 @@
 </div>
 
 <div class="dream-actions">
-            <form action="/users/<%= user._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
+            <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
               <button id="btn-submit" type="submit">Delete</button>
             </form>
-            <a id="btn-submit" href="/users/<%= user._id %>/dreams/<%= dream._id %>/edit">Edit</a>
+            <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>/edit">Edit</a>
           </div>
 
-       <a id="btn-submit" href="/users/<%= user._id %>/dreams">back to dreams </a>
+       <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams">back to dreams </a>
 </body>
 </html>

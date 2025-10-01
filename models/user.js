@@ -1,8 +1,4 @@
-const {dream} = require('express');
-const {category} = require('express');
 const mongoose = require('mongoose');
-
-
 
 const dreamSchema = new mongoose.Schema({
 
