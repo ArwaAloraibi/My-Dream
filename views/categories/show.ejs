@@ -9,11 +9,11 @@
 <body>
  
 <div class="dream-details">
-    <p>Category: <%= category.name %></p>
+    <h1><%= category.name %></h1>
 
     <!-- link to view/add dreams in this category -->
     <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams">
-        View/Add Dreams in <%= category.name %>
+        Add Dreams in <%= category.name %>
     </a>
 </div>
 
