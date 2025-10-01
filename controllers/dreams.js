@@ -36,11 +36,17 @@ router.post('/', async (req, res)=>{
      try {
     // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-    currentUser.dream.push(req.body);
+    const newDream = {
+  dream: req.body.dream,
+  description: req.body.description,
+  status: req.body.status,
+  categoryId: req.body.categoryId // must come from form
+};
+    currentUser.dream.push(newDream);
     // Save changes to the user
     await currentUser.save();
-    // Redirect back to the dreams index view
-    res.redirect(`/users/${currentUser._id}/dreams`);
+    // Redirect back to a specific category  
+res.redirect(`/users/${currentUser._id}/categories/${req.body.categoryId}/dreams`);
   } 
   catch (error) {
     // If any errors, log them and redirect back home

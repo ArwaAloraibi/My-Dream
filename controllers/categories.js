@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 const User = require('../models/user.js');
 
 
@@ -82,7 +83,7 @@ res.render('categories/edit.ejs',{
 });
 
 
-// show the update on the page
+// update on the page
 router.put('/:categoryId', async (req, res) => {
 try{
 const currentUser = await User.findById(req.session.user._id);
@@ -96,22 +97,43 @@ res.redirect('/');
 }
 });
 
-// show dream's details
-router.get('/:categoryId', async (req, res) => {
+
+// Show category by id
+router.get('/:id', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    const category = currentUser.category.id(req.params.categoryId);
-
-    res.render('categories/show.ejs', { 
-      currentUser, 
-      category,
-      dreams: currentUser.dream.filter(d => d.categoryId?.toString() === category._id.toString())
-    });
-  } catch (err) {
-    console.log(err);
-    res.redirect(`/users/${currentUser._id}/categories`);
+    const category = currentUser.category.id(req.params.id);
+    if (!category) {
+      return res.redirect(`/users/${currentUser._id}/categories`);
+    }
+    res.render('categories/show.ejs', { category, currentUser });
+  } catch (error) {
+    console.log(error);
+    res.redirect(`/users/${req.session.user._id}/categories`);
   }
 });
+
+// Show dreams in a category
+router.get('/:id/dreams', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const category = currentUser.category.id(req.params.id);
+    if (!category) {
+      return res.redirect(`/users/${currentUser._id}/categories`);
+    }
+    const dreams = currentUser.dream.filter(
+      (dream) => dream.categoryId.toString() === req.params.id
+    );
+    res.render('dreams/index.ejs', { dreams, categoryId: req.params.id, currentUser });
+  } catch (err) {
+    console.log(err);
+    res.redirect(`/users/${req.session.user._id}/categories`);
+  }
+});
+
+
+
+
 
 
 module.exports = router;

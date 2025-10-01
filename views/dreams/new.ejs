@@ -21,14 +21,12 @@
   <label for="description">Description:</label>
   <input type="text" name="description" id="description"/>
 
-  <label for="category">Category:</label>
-  <select id="category" name="category" required>
-    <option value="Academic_Star">Academic Star</option>
-    <option value="Job_Star">Job Star</option>
-    <option value="Language_Star">Language Star</option>
-    <option value="Matrialistic_Star">Matrialistic Star</option>
-    <option value="Skills_Star">Skills Star</option>
-  </select>
+<label for="categoryId">Category:</label>
+<select id="categoryId" name="categoryId" required>
+  <% currentUser.category.forEach((cat) => { %>
+    <option value="<%= cat._id %>"><%= cat.name %></option>
+  <% }) %>
+</select>
 
   <label for="status">Status:</label>
   <select id="status" name="status" required>

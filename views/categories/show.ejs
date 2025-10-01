@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title><%= category.name %></title>
+</head>
+<body>
+ 
+<div class="dream-details">
+    <p>Category: <%= category.name %></p>
+
+    <!-- link to view/add dreams in this category -->
+    <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams">
+        View/Add Dreams in <%= category.name %>
+    </a>
+</div>
+
+<div class="dream-actions">
+    <a id="btn-submit" href="/users/<%= currentUser._id %>/dreams">Back to all dreams</a>
+</div>
+
+</body>
+</html>

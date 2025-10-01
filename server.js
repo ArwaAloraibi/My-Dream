@@ -17,6 +17,7 @@ const morgan = require('morgan');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
+
 // Controllers
 const authController = require('./controllers/auth.js');
 const dreamsController = require('./controllers/dreams.js'); 

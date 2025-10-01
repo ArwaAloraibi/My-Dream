@@ -1,5 +1,5 @@
 // const {dream} = require('express');
-// const {category} = require('express');
+const {category} = require('express');
 const mongoose = require('mongoose');
 
 const categorySchema = new mongoose.Schema({
@@ -8,6 +8,8 @@ const categorySchema = new mongoose.Schema({
     type: String,
     required: true
   },
+
+  
 
 });
 
@@ -27,10 +29,16 @@ const dreamSchema = new mongoose.Schema({
     enum: ['Working_On', 'Done'],
   },
 
-    categoryId: { 
-     type: mongoose.Schema.Types.ObjectId 
-    },
+   categoryId: {
+    type: mongoose.Schema.Types.ObjectId, 
+    required: true,
+  },
 
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true,
+  }
 
 });
 
@@ -51,5 +59,6 @@ const userSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', userSchema);
+
 
 module.exports = User;
