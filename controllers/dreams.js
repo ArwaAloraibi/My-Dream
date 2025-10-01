@@ -95,7 +95,7 @@ res.redirect('/');
 });
 
 // show dream's details
-router.get('/:dreamId', async (req, res) => {
+router.get('/:categoryId/:dreamId', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const dream = currentUser.dream.id(req.params.dreamId);
