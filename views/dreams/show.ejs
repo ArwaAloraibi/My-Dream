@@ -12,7 +12,7 @@
 
 <div class="dream-details">
 
-      <p>Dream: <%= dream.dream %></p>
+      <h1><%= dream.dream %></h1>
 
      <p>Description:<%= dream.description %></p>
 
@@ -42,6 +42,6 @@
             <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>/edit">Edit</a>
           </div>
 
-       <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams">back to dreams </a>
+       <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>">back to <%= category.name %> </a>
 </body>
 </html>
