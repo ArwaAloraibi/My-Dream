@@ -8,8 +8,8 @@
 </head>
 <body class="new-dream-container">
 
-
     <%- include('../partials/_navbar.ejs') %>
+    
     <h1>Edit <%=category.name%></h1>
     <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>?_method=PUT" method="POST">
 

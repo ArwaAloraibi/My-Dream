@@ -8,7 +8,7 @@
   </head>
 
   <body class="dreams-container">
-    <%- include('../partials/_navbar.ejs', { user: currentUser  }) %>
+  <%- include('../partials/_navbar.ejs') %>
    
     <!-- why this is linked to the update the category name function?? -->
     <a class="add-a-dream" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/new">Add a Dream</a>
