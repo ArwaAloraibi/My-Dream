@@ -125,6 +125,7 @@ router.get('/:id', async (req, res) => {
 
 
 
+
 // Show dreams in a category
 router.get('/:id/dreams', async (req, res) => {
   try {
@@ -134,17 +135,12 @@ router.get('/:id/dreams', async (req, res) => {
     if (!category) {
       return res.redirect(`/users/${currentUser._id}/categories`);
     }
-    // const dreams = currentUser.dream.filter(
-    //   (dream) => dream.categoryId.toString() === req.params.id
-    // );
-    res.render('dreams/index.ejs', { dreams, category, currentUser });
+    res.render('dreams/new.ejs', { dreams, category, currentUser });
   } catch (err) {
     console.log(err);
     res.redirect(`/users/${req.session.user._id}/categories`);
   }
 });
-
-
 
 
 module.exports = router;
