@@ -123,6 +123,26 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+// show dream inside category by dream id and category id
+router.get('/:id/dreams/:dreamId', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const category = currentUser.category.id(req.params.id);
+
+    // if there is no category go out
+    if (!category) {
+      return res.redirect(`/users/${currentUser._id}/categories`);
+    }
+    //fetch the dream by id 
+    const dream = category.dream.id(req.params.dreamId);
+    
+    // now render the page where the dream's details are
+    res.render('dreams/show.ejs', { dream, category, currentUser });
+  } catch (err) {
+    console.log(err);
+    res.redirect(`/users/${req.session.user._id}/categories`);
+  }
+});
 
 
 
@@ -170,5 +190,8 @@ router.post('/:id/dreams', async (req, res) => {
   }
 
 });
+
+
+
 
 module.exports = router;
