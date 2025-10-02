@@ -149,20 +149,19 @@ router.post('/:id/dreams', async (req, res) => {
     // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
     const category = currentUser.category.id(req.params.id);
+    const dreams = category.dream;
 
     if (!category) {
       return res.redirect(`/users/${currentUser._id}/categories`);
     }
-    // pushing into the category
-       const dreams = category.dream;
 
       //  after i add this now i can see the added dream inside the category 
       category.dream.push(req.body);
 
     // Save changes to the user
     await currentUser.save();
-    // Redirect back to dreams/index.ejs to view sraems dreams
-    res.render('dreams/index.ejs', { dreams, category, currentUser });
+    // Redirect back to categories/show.ejs to view dreams in the category
+    res.redirect(`/users/${currentUser._id}/categories/${category._id}`);
   } 
   catch (error) {
     // If any errors, log them and redirect back home

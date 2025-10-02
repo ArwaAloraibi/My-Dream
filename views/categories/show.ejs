@@ -8,7 +8,7 @@
 </head>
 <body>
  
-<div class="dream-details">
+<body class="dreams-container">
     
     <h1><%= category.name %></h1>
 
@@ -17,6 +17,15 @@
         Add Dreams in <%= category.name %>
     </a>
 
+
+<div class="dream-grid"> 
+  <% category.dream.forEach(dream=> { %>
+    <div class="dream-box"> 
+    <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>">
+    <%= dream.dream %> - <%= dream.description %> - <%= dream.status %>
+  <% }) %>
+</div>
+</div>
 <!-- show the delete and the edit buttons for th ecategory -->
     <div class="dream-actions">
             <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>?_method=DELETE" method="POST">
