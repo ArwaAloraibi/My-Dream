@@ -16,11 +16,6 @@ const dreamSchema = new mongoose.Schema({
     enum: ['Working_On', 'Done'],
   },
 
-  //  categoryId: {
-  //   type: mongoose.Schema.Types.ObjectId, 
-  //   required: true,
-  // },
-
 
 });
 

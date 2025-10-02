@@ -8,13 +8,15 @@ const User = require('../models/user.js');
 router.get('/', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
-    res.render(`/categories/${req.body.categoryId}`, {
-      currentUser: currentUser,         
-      dreams: currentUser.dream,  
-    });
-  } catch (error) {
-    console.log(error);
-    res.redirect('/');
+    const category = currentUser.category.id(req.params.id);
+    const dreams = category.dream
+    if (!category) {
+      return res.redirect(`/users/${currentUser._id}/categories`);
+    }
+    res.render('dreams/new.ejs', { dreams, category, currentUser });
+  } catch (err) {
+    console.log(err);
+    res.redirect(`/users/${req.session.user._id}/categories`);
   }
 });
 
@@ -36,13 +38,8 @@ router.post('/', async (req, res)=>{
      try {
     // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-    const newDream = {
-  dream: req.body.dream,
-  description: req.body.description,
-  status: req.body.status,
-  categoryId: req.body.categoryId 
-};
-    currentUser.dream.push(newDream);
+
+    currentUser.dream.push(req.session);
     // Save changes to the user
     await currentUser.save();
     // Redirect back to a specific category  
