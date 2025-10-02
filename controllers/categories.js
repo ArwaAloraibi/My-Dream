@@ -136,7 +136,7 @@ router.get('/:id/dreams/:dreamId', async (req, res) => {
     //fetch the dream by id 
     const dream = category.dream.id(req.params.dreamId);
     
-    // now render the page where the dream's details are
+    // now render the page where the dream's details
     res.render('dreams/show.ejs', { dream, category, currentUser });
   } catch (err) {
     console.log(err);
@@ -146,7 +146,7 @@ router.get('/:id/dreams/:dreamId', async (req, res) => {
 
 
 
-// Show dreams in a category
+// add dreams in a category
 router.get('/:id/dreams', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
@@ -163,7 +163,7 @@ router.get('/:id/dreams', async (req, res) => {
 });
 
 
-// update and add the newly created dream
+// update the newly added dream
 router.post('/:id/dreams', async (req, res) => {
      try {
     // Look up the user from req.session
@@ -191,6 +191,92 @@ router.post('/:id/dreams', async (req, res) => {
 
 });
 
+// edit a dream inside a category
+router.get('/:categoryId/dreams/:dreamId/edit', async (req, res) => {
+  try {
+    const currentUser = await User.findById(req.session.user._id);
+    const category = currentUser.category.id(req.params.categoryId);
+
+    if (!category) {
+      return res.redirect(`/users/${currentUser._id}/categories`);
+    }
+
+    const dream = category.dream.id(req.params.dreamId);
+
+    if (!dream) {
+      return res.redirect(`/users/${currentUser._id}/categories/${category._id}`);
+    }
+
+    res.render('dreams/edit.ejs', { dream, category, currentUser });
+
+  } catch (error) {
+    console.log(error);
+    res.redirect('/');
+  }
+});
+
+// update the edited dream's details
+router.put('/:categoryId/dreams/:dreamId', async(req, res) => {
+
+    try {
+    const currentUser = await User.findById(req.session.user._id);
+    const category = currentUser.category.id(req.params.categoryId);
+
+    if (!category) {
+      return res.redirect(`/users/${currentUser._id}/categories`);
+    }
+
+    // fetch the dream that you want to edit
+    const dream = category.dream.id(req.params.dreamId);
+ 
+    if (!dream) {
+      return res.redirect(`/users/${currentUser._id}/categories/${category._id}`);
+    }
+     dream.set({
+      dream: req.body.dream,
+      description: req.body.description,
+      status: req.body.status
+    });
+
+    // Save changes to the user
+    await currentUser.save();
+    res.redirect(`/users/${currentUser._id}/categories/${category._id}/dreams/${dream._id}`);
+  } 
+  catch (error) {
+    // If any errors, log them and redirect back home
+    console.log(error);
+    res.redirect(`/users/${req.session.user._id}/categories`);
+  }
+
+});
+
+
+// delete a dream that is inside a category
+router.delete('/:categoryId/dreams/:dreamId', async (req,res)=>{
+try{
+ const currentUser = await User.findById(req.session.user._id);
+ const category = currentUser.category.id(req.params.categoryId);
+
+    if (!category) {
+      return res.redirect(`/users/${currentUser._id}/categories`);
+    }
+
+    // fetch the dream that you want to edit
+    const dream = category.dream.id(req.params.dreamId);
+ 
+    if (!dream) {
+      return res.redirect(`/users/${currentUser._id}/categories/${category._id}`);
+    }
+
+dream.deleteOne();
+await currentUser.save();
+res.redirect(`/users/${currentUser._id}/categories/${category._id}`);
+
+}catch(error) {
+    console.log(error);
+    res.redirect('/');
+}
+});
 
 
 
