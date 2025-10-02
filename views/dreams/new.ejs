@@ -21,12 +21,6 @@
   <label for="description">Description:</label>
   <input type="text" name="description" id="description"/>
 
-<label for="categoryId">Category:</label>
-<select id="categoryId" name="categoryId" required>
-  <% currentUser.category.forEach((cat) => { %>
-    <option value="<%= cat._id %>"><%= category.name %></option>
-  <% }) %>
-</select>
 
   <label for="status">Status:</label>
   <select id="status" name="status" required>
