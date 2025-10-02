@@ -7,6 +7,9 @@
       <% if(currentUser) { %>
 
   <a class="nav-links" href="/auth/sign-out">Sign Out</a>
+  <a class="nav-links" href="/users/<%= currentUser._id %>/categories">Categories</a>
+
+
      
   </div>
   <% } else { %>
