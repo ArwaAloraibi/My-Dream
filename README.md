@@ -16,21 +16,21 @@ With this tool, users can transform scattered thoughts into a structured roadmap
 
 ##  User Stories:
 
-AAU, I want to sign up and log in, so that I can have a personal account.<br>
+⭐ AAU, I want to sign up and log in, so that I can have a personal account.<br>
 
-AAU, I want to add dreams and categories, so that I can organize my goals.<br>
+⭐ AAU, I want to add dreams and categories, so that I can organize my goals.<br>
 
-AAU, I want to view my dreams and categories, so that I can keep track of them.<br>
+⭐ AAU, I want to view my dreams and categories, so that I can keep track of them.<br>
 
-AAU, I want to see detailed information about a dream or category, so that I can review progress and details.<br>
+⭐ AAU, I want to see detailed information about a dream or category, so that I can review progress and details.<br>
 
-AAU, I want to delete a dream or category, so that I can remove outdated or irrelevant goals.<br>
+⭐ AAU, I want to delete a dream or category, so that I can remove outdated or irrelevant goals.<br>
 
-AAU, I want to edit a dream or category, so that I can update them when needed.<br>
+⭐ AAU, I want to edit a dream or category, so that I can update them when needed.<br>
 
-AAU, I want to mark a dream as “Done” or “Working On”, so that I can track the status of my goals.<br>
+⭐ AAU, I want to mark a dream as “Done” or “Working On”, so that I can track the status of my goals.<br>
 
-AAU, I want to sign out, so that I can securely exit my account.<br>
+⭐ AAU, I want to sign out, so that I can securely exit my account.<br>
 
 ##  ERD:
 
