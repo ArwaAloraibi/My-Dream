@@ -14,6 +14,8 @@ With this tool, users can transform scattered thoughts into a structured roadmap
 
 ## App's Screenshots:
 ![Home Page](https://i.imgur.com/vE7piYv.png)
+![User's Account](https://i.imgur.com/3yMXLuK.png)
+![Inside the cCtegory](https://i.imgur.com/JTaFgvj.png)
 
 ##  User Stories:
 
@@ -34,7 +36,7 @@ With this tool, users can transform scattered thoughts into a structured roadmap
 ⭐ AAU, I want to sign out, so that I can securely exit my account.<br>
 
 ##  ERD:
-
+![The ERD](https://i.imgur.com/CRbvs7B.png)
 
 
 ## Deployed App:
