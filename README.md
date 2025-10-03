@@ -12,9 +12,9 @@
 
 With this tool, users can transform scattered thoughts into a structured roadmap, making it easier to stay motivated and measure growth over time.</p>
 
-#⭐ App's Screenshots:
+## App's Screenshots:
 
-#⭐ User Stories:
+##  User Stories:
 
 AAU, I want to sign up and log in, so that I can have a personal account.<br>
 
@@ -32,16 +32,16 @@ AAU, I want to mark a dream as “Done” or “Working On”, so that I can tra
 
 AAU, I want to sign out, so that I can securely exit my account.<br>
 
-#⭐ ERD:
+##  ERD:
 
 
 
-#⭐ Deployed App:
+## Deployed App:
 
-#⭐ Technologies Used: 
+## Technologies Used: 
 JavaScript, CSS, HTML, EJS, Express.js and MongoDB + Mongoose<br>
 
-#⭐ Future Enhancements:
+## Future Enhancements:
 
 
 1 - User Profiles & Sharing: Allow users to visit other users’ accounts to explore their dreams, spreading motivation and inspiration.<br>
