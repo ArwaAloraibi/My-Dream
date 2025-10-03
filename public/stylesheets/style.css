@@ -65,7 +65,7 @@ h1 {
 .dream-grid .dream-box:nth-child(6n+5) { filter: hue-rotate(225deg); }
 .dream-grid .dream-box:nth-child(6n+6) { filter: hue-rotate(275deg); }
 
-/* thisa one is for the index page not the actuall ad dream form */
+/* this one is for the index page not the actuall ad dream form */
 .add-a-dream{
   margin-bottom: 300px;
   position: fixed;
@@ -278,33 +278,6 @@ h1 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* @media(min_width:950px)
-{
-.dreams-container {
-  justify-content: center;
-  text-align: center;
-}
-body {
-    font-size: 18px;
-  }
-}
-
-
-
- */
 
 
 

@@ -5,7 +5,7 @@ const User = require('../models/user.js');
 
 
 
-// to delete a dream
+// delete dream
 router.delete('/:dreamId', async (req,res)=>{
 try{
 const currentUser = await User.findById(req.session.user._id);
@@ -26,7 +26,7 @@ res.redirect(`/users/${currentUser._id}/dreams`);
 }
 });
 
-// Edit route
+// Edit dream
 router.get('/:dreamId/edit', async (req, res) => {
 try{
 const currentUser = await User.findById(req.session.user._id);

@@ -14,7 +14,7 @@
     
     <h1><%= category.name %></h1>
 
-    <!-- link to view/add dreams in this category -->
+    <!-- link to add dreams inside category -->
     <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams">
         Add Dreams in <%= category.name %>
     </a>
@@ -30,7 +30,7 @@
   <% }) %>
 </div>
 </div>
-<!-- show the delete and the edit buttons for th ecategory -->
+<!-- show the delete and the edit buttons for the category -->
     <div class="dream-actions">
             <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>?_method=DELETE" method="POST">
               <button id="btn-submit" type="submit">Delete</button>
