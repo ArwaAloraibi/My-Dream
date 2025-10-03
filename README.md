@@ -13,6 +13,7 @@
 With this tool, users can transform scattered thoughts into a structured roadmap, making it easier to stay motivated and measure growth over time.</p>
 
 ## App's Screenshots:
+![Home Page](https://i.imgur.com/vE7piYv.png)
 
 ##  User Stories:
 
