@@ -1,6 +1,6 @@
 # My Dream
 
-##⭐ Website Description:
+⭐## Website Description:
 
 <p> My Dream is a personal dream and goals organizer designed to help you keep your aspirations in order. The app allows you to:
 
