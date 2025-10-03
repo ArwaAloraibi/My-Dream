@@ -10,10 +10,10 @@
   <body class="dreams-container">
   <%- include('../partials/_navbar.ejs') %>
 
-    <h1 id="Welcome-line">Welcome to my Categories</h1>
+    <h1 id="Welcome-line">Welcome <%=user.username%></h1>
 
    
-    <a class="add-a-dream" href="/users/<%= currentUser._id %>/categories/new">Add a Category</a>
+    <a class="action"id="btn-submit" href="/users/<%= currentUser._id %>/categories/new">Add a Category</a>
  
 
     <div class="dream-grid">
@@ -26,5 +26,6 @@
           
         </div>
       <% }) %>
+      </div>
   </body>
 </html>

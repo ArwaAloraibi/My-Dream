@@ -57,13 +57,11 @@ h1 {
 }
 
 
+.dream-grid .dream-box:nth-child(4n+1) { filter: hue-rotate(45deg); }
+.dream-grid .dream-box:nth-child(4n+2) { filter: hue-rotate(90deg); }
+.dream-grid .dream-box:nth-child(4n+3) { filter: hue-rotate(135deg); }
+.dream-grid .dream-box:nth-child(4n+4) { filter: hue-rotate(175deg); }
 
-.dream-grid .dream-box:nth-child(6n+1) { filter: hue-rotate(45deg); }
-.dream-grid .dream-box:nth-child(6n+2) { filter: hue-rotate(90deg); }
-.dream-grid .dream-box:nth-child(6n+3) { filter: hue-rotate(135deg); }
-.dream-grid .dream-box:nth-child(6n+4) { filter: hue-rotate(175deg); }
-.dream-grid .dream-box:nth-child(6n+5) { filter: hue-rotate(225deg); }
-.dream-grid .dream-box:nth-child(6n+6) { filter: hue-rotate(275deg); }
 
 /* this one is for the index page not the actuall ad dream form */
 .add-a-dream{
@@ -110,13 +108,13 @@ h1 {
 
 #btn-submit {
   all: unset;
-  width: 100%;
   position: relative;
-  display: flex;
+  display: inline-flex; 
+  width: 250px;
+  height: 50px;
   padding: 15px 10px;
   justify-content: center;
   text-transform: uppercase;
-  width: 100%;
   color: #03e9f4;
   font-weight: bold;
   font-size: 22px;
@@ -128,6 +126,14 @@ h1 {
   transition: 0.3s;
 }
 
+.actions {
+  display: flex;
+  justify-content: center; 
+  gap: 12px; 
+  margin-top: 20px;
+}
+
+
 #btn-submit:hover {
   background: #03e9f4;
   color: #050801;
@@ -138,8 +144,9 @@ h1 {
 }
 
 .dream-details{
-  color:rgb(93, 87, 79)
-
+  color:rgb(87, 20, 123);
+  position: relative;
+  text-align: center;
 }
 
 /* Start */
@@ -232,9 +239,11 @@ h1 {
 
 
 .dreams-container{
+
   display: flex;
   gap: 10px;
   flex-direction: column;
+  text-decoration: none;
 }
 
 .dream-grid {

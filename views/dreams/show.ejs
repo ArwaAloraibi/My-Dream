@@ -8,6 +8,7 @@
 </head>
 <body>
  
+
 <div class="dream-details">
     <%- include('../partials/_navbar.ejs') %>
 
@@ -35,13 +36,15 @@
 
 </div>
 
-<div class="dream-actions">
+<div class="actions">
             <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>?_method=DELETE" method="POST">
               <button id="btn-submit" type="submit">Delete</button>
             </form>
             <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams/<%= dream._id %>/edit">Edit</a>
-          </div>
+          
 
        <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>">back to <%= category.name %> </a>
-</body>
+
+</div>
+      </body>
 </html>

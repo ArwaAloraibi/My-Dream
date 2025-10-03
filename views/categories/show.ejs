@@ -14,11 +14,7 @@
     
     <h1><%= category.name %></h1>
 
-    <!-- link to add dreams inside category -->
-    <a href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams">
-        Add Dreams in <%= category.name %>
-    </a>
-
+   
 
 <div class="dream-grid"> 
   <% category.dream.forEach(dream=> { %>
@@ -29,21 +25,21 @@
     </div>
   <% }) %>
 </div>
-</div>
+
+<div class="actions">
+ <!-- link to add dreams inside category -->
+    <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/dreams">
+        Add Dreams in <%= category.name %>
+    </a>
+
 <!-- show the delete and the edit buttons for the category -->
-    <div class="dream-actions">
             <form action="/users/<%= currentUser._id %>/categories/<%= category._id %>?_method=DELETE" method="POST">
               <button id="btn-submit" type="submit">Delete</button>
             </form>
+
             <a id="btn-submit" href="/users/<%= currentUser._id %>/categories/<%= category._id %>/edit">Edit</a>
-          </div>
-</body>
 
-</div>
-
-<div class="dream-actions">
     <a id="btn-submit" href="/users/<%= currentUser._id %>/categories">Back to categories</a>
 </div>
-
 </body>
 </html>
