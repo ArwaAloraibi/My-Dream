@@ -53,7 +53,7 @@ JavaScript, CSS, HTML, EJS, Express.js and MongoDB + Mongoose<br>
 
 3 - Community Feed: Create a feed page where users can browse and celebrate others’ successfully achieved dreams.<br>
 
-4 - Let the user select more than one dream to delete at once.<br>
+4 -Dream Management: Allow users to select multiple dreams at once for deletion, making it easier and faster to organize their list without having to remove them individually.<br>
 
 
 ## License
