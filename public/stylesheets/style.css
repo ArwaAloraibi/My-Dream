@@ -31,7 +31,7 @@ h1 {
   flex-direction: column;
   text-transform: uppercase;
   width: 200px;
-  color: #03e9f4;
+  color: #f4036b;
   font-weight: bold;
   font-size: 30px;
   align-items: center;   
@@ -102,7 +102,7 @@ h1 {
 }
  
 .login-container input:focus {
-  box-shadow: 0 0 5px #03e9f4, 0 0 15px #03e9f4;
+  box-shadow: 0 0 5px #f4036b, 0 0 15px #f4036b;
 }
 
 #btn-submit {
@@ -114,7 +114,7 @@ h1 {
   padding: 15px 10px;
   justify-content: center;
   text-transform: uppercase;
-  color: #03e9f4;
+  color: #f4036b;
   font-weight: bold;
   font-size: 22px;
   align-items: center;   
@@ -238,7 +238,6 @@ h1 {
 
 
 .dreams-container{
-
   display: flex;
   gap: 10px;
   flex-direction: column;
